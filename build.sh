@@ -1,8 +1,7 @@
 #!/bin/bash
 
-IMAGE=spring_cloud_app
+IMAGE=springboot
 
-ssh root@192.168.100.100
 docker stop myapp
 
 #mvn package -e -X docker:build -DskipTest

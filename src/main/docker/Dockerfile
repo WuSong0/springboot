@@ -1,4 +1,4 @@
 FROM java:latest
-ADD springCloudApp.jar /springCloudApp.jar
+ADD springboot.jar /springboot.jar
 EXPOSE 8080
-CMD["java","-jar","springCloudApp.jar"]
+CMD["java","-jar","springboot.jar"]
