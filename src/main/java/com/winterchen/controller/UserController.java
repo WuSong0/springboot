@@ -4,6 +4,7 @@ import com.winterchen.mapper.UserMapper;
 import com.winterchen.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -14,7 +15,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/user")
+
 //    @ResponseBody
 //    public String user(){
 //        User user = userMapper.findUserByPhone("13545152730");
@@ -22,9 +23,13 @@ public class UserController {
 //    }
 
     //http://localhost:8080/home/user?phone=13545152730
-    //public String user(@RequestParam(value="phone",required=true,defaultValue="13545152730") String phone ){
+    @RequestMapping(value = "/hello")
         public String user(){
-       // return userService.finduser(phone);
         return "hello word!";
+    }
+
+    @RequestMapping(value = "/user")
+    public String user(@RequestParam(value="phone",required=true,defaultValue="13545152730") String phone ) {
+        return userService.finduser(phone);
     }
 }
