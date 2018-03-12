@@ -15,21 +15,14 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
-//    @ResponseBody
-//    public String user(){
-//        User user = userMapper.findUserByPhone("13545152730");
-//        return user.getName()+"-----"+user.getPassword();
-//    }
-
-    //http://localhost:8080/home/user?phone=13545152730
+    //http://localhost:8080/home/user?phone=00000000000
     @RequestMapping(value = "/hello")
         public String user(){
-        return "hello word!";
+        return "hello word! \n 如果你看到这个页面，恭喜你！ \n 第一个基础微服务框架搭建成功！";
     }
 
     @RequestMapping(value = "/user")
-    public String user(@RequestParam(value="phone",required=true,defaultValue="13545152730") String phone ) {
+    public String user(@RequestParam(value="phone",required=true,defaultValue="00000000000") String phone ) {
         return userService.finduser(phone);
     }
 }
