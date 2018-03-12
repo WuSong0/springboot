@@ -8,4 +8,4 @@ docker stop myapp
 
 sleep 3s
 
-docker run -d --rm -p 9090:8080 --name myapp  ${IMAGE}
+docker run -d --rm -p 9090:8080 --link mysql  --name myapp  ${IMAGE}
